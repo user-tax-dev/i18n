@@ -1,0 +1,29 @@
+{
+  "name": "@iuser/i18n",
+  "version": "0.0.16",
+  "repository": "git@github.com:iuser-dev/i18n.git",
+  "type": "module",
+  "dependencies": {
+    "@iuser/it": "^0.0.6",
+    "@iuser/walk": "^0.0.2",
+    "@iuser/wasm-set": "^0.0.1",
+    "@iuser/write": "^0.0.3",
+    "@iuser/xxhash3-wasm": "^0.0.12",
+    "@iuser/google-translate-api": "^0.0.2",
+    "await-sleep": "^0.0.1",
+    "yargs": "^17.5.1"
+  },
+  "files": [
+    "lib/*",
+    "i18n.js"
+  ],
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "bin": {
+    "i18n": "./lib/i18n.js"
+  },
+  "devDependencies": {
+    "coffee_plus": "^0.0.25"
+  }
+}
