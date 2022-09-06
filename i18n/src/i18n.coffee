@@ -19,7 +19,6 @@ argv = yargs(hideBin(process.argv))
 
 [lang] = argv._
 
-
 if lang_li.indexOf(lang) < 0
   error lang + ' not in { ' + [...lang_li].join(' ')+' }'
   exit(1)

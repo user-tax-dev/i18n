@@ -8,6 +8,7 @@
   path > join
   ./lang_li.js
   ./transalte.js:Transalte
+  ./md.js > md
   @iuser/xxhash3-wasm > hash128
 
 
@@ -171,8 +172,15 @@ i18n = (src, fp, exist_fp, path)=>
   if existsSync root
     for await fp from walkRel root
       if not fp.endsWith ext
+        if fp.endsWith '.md'
+          await md(
+            src
+            fp
+            join(src, _i18n, fp)
+            (lang, fp)=>join(lang, fp)
+          )
         continue
-      i18n(
+      await i18n(
         src
         fp
         join(src, _i18n, fp)
@@ -181,7 +189,7 @@ i18n = (src, fp, exist_fp, path)=>
 
   it = root+ext
   if existsSync it
-    i18n(
+    await i18n(
       src
       src+ext
       join(_i18n, src+ext)
