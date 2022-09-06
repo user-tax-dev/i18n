@@ -9,5 +9,5 @@ rsync -av --include='*/' --include='*.js' --include='*.mjs' --exclude=* src/ lib
 bun run cep -- -o lib -c src
 #esbuild --format=esm --allow-overwrite --bundle --target=node18 --outdir=lib lib/index.js
 #bun run babel --plugins @babel/plugin-transform-modules-commonjs lib/*.js -d lib --out-file-extension .cjs
-sd "//!/usr/bin/env coffee" "#!/usr/bin/env node" lib/i18n.js
+#sd "//!/usr/bin/env coffee" "#!/usr/bin/env node" lib/i18n.js
 chmod +x lib/i18n.js

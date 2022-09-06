@@ -8,7 +8,7 @@
   path > join
   ./lang_li.js
   ./transalte.js:Transalte
-  ./md.js > md
+  ./md.js
   @iuser/xxhash3-wasm > hash128
 
 
