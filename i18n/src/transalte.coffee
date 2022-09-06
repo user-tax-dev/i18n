@@ -8,12 +8,16 @@
 #@grpc/grpc-js:grpc
 #client = new I18nClient("127.0.0.1:5900",  grpc.credentials.createInsecure())
 
-RENAME = {zh:'zh-CN',fil:'tl'}
+
+rename = {
+  zh:'zh-CN'
+  fil:'tl'
+}
 
 < (src)=>
-  src = RENAME[src] or src
+  src = rename[src] or src
   (to, li)=>
-    to = RENAME[to] or to
+    to = rename[to] or to
     result = []
     if li.length
       for i from li
