@@ -82,7 +82,7 @@ it2json = (src, fp, exist_fp, path)=>
 
   now = new BinSet
 
-  for lang from lang_li
+  for lang from LangLi
     ifp = path(lang, fp)
     if ifp != src
       if existsSync ifp
@@ -125,7 +125,7 @@ i18n = (src, fp, exist_fp, path)=>
     await write(fp, dumps it)
     await dumpJson fp, it
 
-  for lang from lang_li
+  for lang from LangLi
     #if lang == 'sk'
     #  continue
     if lang != src
