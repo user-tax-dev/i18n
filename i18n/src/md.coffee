@@ -10,18 +10,13 @@
   transalte = Transalte src
   src_fp = path src, fp
   md = read(src_fp)
-  console.log md
+  console.log src_fp
   for to from LangLi
-    console.log to
-    #console.log await transalte(to, [md])
     await write(
       path(to, fp)
-      ""
+      await transalte(to, [md])
     )
-    break
-  # md = await read fp
-
-  #console.log src, fp, exist_fp, path
+  return
 
 if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
   await main()
