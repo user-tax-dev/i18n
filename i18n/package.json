@@ -7,8 +7,8 @@
     "@iuser/it": "^0.0.6",
     "@iuser/walk": "^0.0.2",
     "@iuser/wasm-set": "^0.0.1",
-    "@iuser/write": "^0.0.3",
-    "@iuser/xxhash3-wasm": "^0.0.12",
+    "@iuser/write": "^0.0.6",
+    "@iuser/xxhash3-wasm": "^0.0.13",
     "@iuser/google-translate-api": "^0.0.2",
     "await-sleep": "^0.0.1",
     "yargs": "^17.5.1"
@@ -24,6 +24,6 @@
     "i18n": "./lib/i18n.js"
   },
   "devDependencies": {
-    "coffee_plus": "^0.0.25"
+    "coffee_plus": "^0.0.39"
   }
 }
