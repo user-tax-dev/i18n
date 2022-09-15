@@ -20,13 +20,22 @@ rename = {
     to = rename[to] or to
     result = []
     if li.length
+      opt = {
+        from: src
+        to
+      }
+      {i18n_tld} = process.env
+      if i18n_tld
+        opt.tld = i18n_tld
       for i from li
         retry = 9
         loop
           try
-            r = await translate(i, {from: src, to})
-            #r = await translate(i, {from: src, to, tld:'cn'})
-            result.push r.text
+            {text} = await translate(i, opt)
+            text = text.trim()
+            if text.endsWith '|'
+              text = text[...-1].trimEnd()
+            result.push text
             break
           catch err
             if retry
