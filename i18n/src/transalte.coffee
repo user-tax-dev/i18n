@@ -33,8 +33,9 @@ rename = {
           try
             {text} = await translate(i, opt)
             text = text.trim()
-            if text.endsWith '|'
-              text = text[...-1].trimEnd()
+            for c from '.|'
+              if text.endsWith(' '+c) and not i.endsWith(c)
+                text = text[...-1].trimEnd()
             result.push text
             break
           catch err
