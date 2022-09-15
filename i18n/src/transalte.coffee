@@ -24,7 +24,8 @@ rename = {
         retry = 9
         loop
           try
-            r = await translate(i, {from: src, to, tld:'cn'})
+            r = await translate(i, {from: src, to})
+            #r = await translate(i, {from: src, to, tld:'cn'})
             result.push r.text
             break
           catch err
