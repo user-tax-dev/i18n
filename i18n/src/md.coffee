@@ -12,6 +12,8 @@
   md = read(src_fp)
   console.log src_fp
   for to from LangLi
+    if to == src
+      continue
     console.log to
     await write(
       path(to, fp)
