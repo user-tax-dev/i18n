@@ -29,17 +29,27 @@ id2str = (s,m)=>
    .replace(
      /(\d+ _)/g
     (id)=>
-      id[..-1].trim()+'_'
+      id[..-2].trim()+'_'
+   )
+   .replace(
+     /(_\d+)$/mg
+     (id)=>
+      id.trimEnd()+'_'
+   )
+   .replace(
+     /(^\d+_)/mg
+     (id)=>
+       '_'+id.trimStart()
    )
    .replace(
      /(_\d+ )/g
      (id)=>
-      id.trim()+'_ '
+      id.trimEnd()+'_ '
    )
    .replace(
      /( \d+_)/g
      (id)=>
-      ' _'+id.trimStart()
+       ' _'+id.trimStart()
    )
    .replace(
     /(_\d+_)/g
