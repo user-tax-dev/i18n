@@ -25,6 +25,7 @@
     "i18n": "./lib/i18n.js"
   },
   "devDependencies": {
+    "@iuser/node-loader": "^0.0.25",
     "coffee_plus": "^0.0.39"
   }
 }
