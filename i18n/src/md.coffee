@@ -22,6 +22,11 @@ str2id = (s)=>
 id2str = (s,m)=>
   s.replaceAll('__','_')
    .replace(
+     /(_\d+):/g
+    (id)=>
+      id+'_ :'
+   )
+   .replace(
      /(_ \d+)/g
     (id)=>
       '_'+id[1..].trim()
