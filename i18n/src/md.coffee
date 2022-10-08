@@ -13,7 +13,7 @@ str2id = (s)=>
     s.replace(
       /(\${[a-zA-Z_]+})/g
       (a)=>
-        map.set(++n, a[1..])
+        map.set(++n, a[2..-2])
         '_'+n+'_'
     )
     map
