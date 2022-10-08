@@ -1,6 +1,6 @@
 {
   "name": "@iuser/i18n",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "repository": "git@github.com:iuser-dev/i18n.git",
   "type": "module",
   "dependencies": {
