@@ -20,12 +20,36 @@ str2id = (s)=>
   ]
 
 id2str = (s,m)=>
-  s.replace(
+  s.replaceAll('__','_')
+   .replace(
+     /(_\s\d+)/g
+    (id)=>
+      '_'+id[1..].trim()
+   )
+   .replace(
+     /(\d+\s_)/g
+    (id)=>
+      id[..-1].trim()+'_'
+   )
+   .replace(
+     /(_\d+\s)/g
+     (id)=>
+      id.trim()+'_ '
+   )
+   .replace(
+     /(\s\d+_)/g
+     (id)=>
+      ' _'+id.trimStart()
+   )
+   .replace(
     /(_\d+_)/g
     (id)=>
-      '$'+m.get(
+      ' $'+m.get(
         parseInt id[1...-1]
-      )
+      )+' '
+  ).replace(
+    /\s+/g
+    ' '
   )
 
 < (src, fp, exist_fp, path)=>
