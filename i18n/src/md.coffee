@@ -11,7 +11,7 @@ str2id = (s)=>
   map = new Map()
   [
     s.replace(
-      /(\$[a-zA-Z_]+)/g
+      /(\${[a-zA-Z_]+})/g
       (a)=>
         map.set(++n, a[1..])
         '_'+n+'_'
@@ -59,9 +59,9 @@ id2str = (s,m)=>
    .replace(
     /(_\d+_)/g
     (id)=>
-      ' $'+m.get(
+      ' ${'+m.get(
         parseInt id[1...-1]
-      )+' '
+      )+'} '
   ).replace(
     / +/g
     ' '
