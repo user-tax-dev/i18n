@@ -38,10 +38,8 @@ id2str = (s,m)=>
     console.log to
     await write(
       path(to, fp)
-      id2str(
-        await transalte(to, [md])
-        map
-      )
+      (await transalte(to, [md])).map (s)=>
+        id2str(s,map)
     )
   return
 
