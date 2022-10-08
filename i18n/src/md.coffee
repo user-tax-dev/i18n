@@ -24,7 +24,7 @@ id2str = (s,m)=>
    .replace(
      /(_\d+):/g
     (id)=>
-      id+'_ :'
+      id[..-2]+'_ :'
    )
    .replace(
      /(_ \d+)/g
