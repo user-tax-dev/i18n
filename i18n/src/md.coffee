@@ -6,18 +6,42 @@
   fs > readFileSync
   @iuser/write
 
+str2id = (s)=>
+  n = -1
+  map = new Map()
+  [
+    s.replace(
+      /(\$[a-zA-Z_]+)/g
+      (a)=>
+        map.set(++n, a[1..])
+        '_'+n+'_'
+    )
+    map
+  ]
+
+id2str = (s,m)=>
+  s.replace(
+    /(_\d+_)/g
+    (id)=>
+      '$'+m.get(
+        parseInt id[1...-1]
+      )
+  )
+
 < (src, fp, exist_fp, path)=>
   transalte = Transalte src
   src_fp = path src, fp
-  md = read(src_fp)
-  console.log src_fp
+  [md,map] = str2id read(src_fp)
   for to from LangLi
     if to == src
       continue
     console.log to
     await write(
       path(to, fp)
-      await transalte(to, [md])
+      id2str(
+        await transalte(to, [md])
+        map
+      )
     )
   return
 
