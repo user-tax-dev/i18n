@@ -22,22 +22,22 @@ str2id = (s)=>
 id2str = (s,m)=>
   s.replaceAll('__','_')
    .replace(
-     /(_\s\d+)/g
+     /(_ \d+)/g
     (id)=>
       '_'+id[1..].trim()
    )
    .replace(
-     /(\d+\s_)/g
+     /(\d+ _)/g
     (id)=>
       id[..-1].trim()+'_'
    )
    .replace(
-     /(_\d+\s)/g
+     /(_\d+ )/g
      (id)=>
       id.trim()+'_ '
    )
    .replace(
-     /(\s\d+_)/g
+     /( \d+_)/g
      (id)=>
       ' _'+id.trimStart()
    )
@@ -48,7 +48,7 @@ id2str = (s,m)=>
         parseInt id[1...-1]
       )+' '
   ).replace(
-    /\s+/g
+    / +/g
     ' '
   )
 
