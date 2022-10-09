@@ -3,7 +3,8 @@
 > ./transalte.js:Transalte
   ./lang_li.js
   @iuser/read
-  fs > readFileSync
+  fs > readFileSync existsSync
+  @iuser/xxhash3-wasm > hash128
   @iuser/write
 
 str2id = (s)=>
@@ -68,14 +69,17 @@ id2str = (s,m)=>
   )
 
 < (src, fp, exist_fp, path)=>
-  transalte = Transalte src
   src_fp = path src, fp
+  if existsSync exist_fp
+    readFileSync exist_fp
+
+  transalte = Transalte src
   [md,map] = str2id read(src_fp)
   for to from LangLi
     if to == src
       continue
     console.log to
-    await write(
+    write(
       path(to, fp)
       (await transalte(to, [md])).map (s)=>
         id2str(s,map)

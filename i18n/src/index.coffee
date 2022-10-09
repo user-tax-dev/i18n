@@ -92,7 +92,7 @@ it2json = (src, fp, exist_fp, path)=>
           continue
         now.add hash
         await dumpJson ifp, loads(txt)
-  await write(
+  write(
     exist_fp
     now.dump()
   )
@@ -122,7 +122,7 @@ i18n = (src, fp, exist_fp, path)=>
   transalte = Transalte src
 
   out = (fp, it)=>
-    await write(fp, dumps it)
+    write(fp, dumps it)
     await dumpJson fp, it
 
   for lang from LangLi
@@ -156,7 +156,7 @@ i18n = (src, fp, exist_fp, path)=>
     exist.add(i)
     return
 
-  await write exist_fp, concat(
+  write exist_fp, concat(
     file_hash
     exist.dump()
   )
