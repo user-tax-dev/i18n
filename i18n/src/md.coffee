@@ -85,8 +85,10 @@ id2str = (s,m)=>
     console.log to
     write(
       path(to, fp)
-      (await transalte(to, [md])).map (s)=>
-        id2str(s,map)
+      (
+        (await transalte(to, [md])).map (s)=>
+          id2str(s,map)
+      ).join('')
     )
   write(
     exist_fp
