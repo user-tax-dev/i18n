@@ -172,7 +172,7 @@ i18n = (src, fp, exist_fp, path)=>
           await md(
             src
             fp
-            join(src, _i18n, fp)
+            join(src, _i18n, fp[..-4])
             (lang, fp)=>join(lang, fp)
           )
         continue
