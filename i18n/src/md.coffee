@@ -77,6 +77,7 @@ id2str = (s,m)=>
     if u8eq hash, readFileSync(exist_fp)
       return
 
+  console.log src_fp
   transalte = Transalte src
   [md,map] = str2id txt
   for to from LangLi
