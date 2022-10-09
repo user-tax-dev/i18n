@@ -6,6 +6,7 @@
   fs > readFileSync existsSync
   @iuser/xxhash3-wasm > hash128
   @iuser/write
+  @iuser/u8 > u8eq
 
 str2id = (s)=>
   n = -1
@@ -70,11 +71,14 @@ id2str = (s,m)=>
 
 < (src, fp, exist_fp, path)=>
   src_fp = path src, fp
+  txt = read(src_fp)
+  hash = hash128 txt
   if existsSync exist_fp
-    readFileSync exist_fp
+    if u8eq hash, readFileSync(exist_fp)
+      return
 
   transalte = Transalte src
-  [md,map] = str2id read(src_fp)
+  [md,map] = str2id txt
   for to from LangLi
     if to == src
       continue
@@ -84,6 +88,10 @@ id2str = (s,m)=>
       (await transalte(to, [md])).map (s)=>
         id2str(s,map)
     )
+  write(
+    exist_fp
+    hash
+  )
   return
 
 if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname

@@ -10,12 +10,8 @@
   ./transalte.js:Transalte
   ./md.js
   @iuser/xxhash3-wasm > hash128
+  @iuser/u8 > u8eq
 
-
-eq = (first, second) =>
-  first.length == second.length and first.every(
-    (value, index) => value == second[index]
-  )
 
 concat = (a,b)=>
   len = a.length
@@ -106,7 +102,7 @@ i18n = (src, fp, exist_fp, path)=>
 
   if existsSync exist_fp
     bin = readFileSync(exist_fp)
-    if eq file_hash, bin[..15]
+    if u8eq file_hash, bin[..15]
       it2json src, fp, exist_fp, path
       return
     exist = BinSet.load bin[16..],16

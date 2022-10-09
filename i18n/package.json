@@ -7,6 +7,7 @@
     "@iuser/google-translate-api": "^0.0.2",
     "@iuser/it": "^0.0.6",
     "@iuser/read": "^0.0.5",
+    "@iuser/u8": "^0.0.8",
     "@iuser/walk": "^0.0.2",
     "@iuser/wasm-set": "^0.0.1",
     "@iuser/write": "^0.0.7",
