@@ -10,7 +10,6 @@ filepath=$(realpath $1)
 fi
 
 exec node \
-  --es-module-specifier-resolution=node \
   --trace-uncaught \
   --experimental-fetch \
   --expose-gc \
