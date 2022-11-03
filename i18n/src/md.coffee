@@ -2,11 +2,11 @@
 
 > ./transalte.js:Transalte
   ./lang_li.js
-  @iuser/read
+  utax/read.js
   fs > readFileSync existsSync
   @iuser/xxhash3-wasm > hash128
-  @iuser/write
-  @iuser/u8 > u8eq
+  utax/write.js
+  utax/u8.js > u8eq
 
 str2id = (s)=>
   n = -1
