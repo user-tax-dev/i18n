@@ -150,7 +150,7 @@ i18n = (src, fp, exist_fp, path)=>
 
   await out(
     path 'zh-TW', fp
-    j2f read path('zh',fp)
+    loads j2f read path('zh',fp)
   )
 
   exist = new BinSet
