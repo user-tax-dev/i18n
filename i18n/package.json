@@ -24,5 +24,9 @@
   "devDependencies": {
     "@iuser/node-loader": "^0.0.45",
     "coffee_plus": "^0.0.43"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./*": "./*"
   }
 }
