@@ -7,6 +7,7 @@
   @iuser/xxhash3-wasm > hash128
   utax/write.js
   utax/u8.js > u8eq
+  ./opencc.js
 
 str2id = (s)=>
   n = -1
@@ -83,14 +84,26 @@ id2str = (s,m)=>
   for to from LangLi
     if to == src
       continue
+    if to == 'zh-TW'
+      continue
+
     console.log to
+    out = (
+      (await transalte(to, [md])).map (s)=>
+        id2str(s,map)
+    ).join('')
+
     write(
       path(to, fp)
-      (
-        (await transalte(to, [md])).map (s)=>
-          id2str(s,map)
-      ).join('')
+      out
     )
+
+    if to == 'zh'
+      write(
+        path('zh-TW', fp)
+        opencc out
+      )
+
   write(
     exist_fp
     hash
