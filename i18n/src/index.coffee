@@ -1,7 +1,8 @@
 #!/usr/bin/env coffee
 
-> @iuser/walk > walkRel
-  @iuser/write
+> utax/walk > walkRel
+  utax/write
+  utax/read
   @iuser/it > loads dumps
   @iuser/wasm-set > BinSet
   fs > readFileSync existsSync
@@ -10,7 +11,7 @@
   ./transalte.js:Transalte
   ./md.js
   @iuser/xxhash3-wasm > hash128
-  @iuser/u8 > u8eq
+  utax/u8 > u8eq
 
 
 concat = (a,b)=>
@@ -54,9 +55,6 @@ set = (o, key_li, val)=>
     o = t
   o[key_li[n]] = val
   return
-
-read = (fp)=>
-  readFileSync fp, 'utf8'
 
 load = (fp)=>
   if existsSync fp

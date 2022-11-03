@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-> await-sleep:sleep
+> utax/sleep
   @iuser/google-translate-api:translate
 # ../i18n.js > I18nClient
 # path > join
