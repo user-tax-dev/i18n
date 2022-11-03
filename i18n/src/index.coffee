@@ -1,8 +1,9 @@
 #!/usr/bin/env coffee
 
-> utax/walk > walkRel
-  utax/write
-  utax/read
+> utax/walk.js > walkRel
+  utax/write.js
+  utax/read.js
+  utax/u8.js > u8eq
   @iuser/it > loads dumps
   @iuser/wasm-set > BinSet
   fs > readFileSync existsSync
@@ -11,7 +12,6 @@
   ./transalte.js:Transalte
   ./md.js
   @iuser/xxhash3-wasm > hash128
-  utax/u8 > u8eq
 
 
 concat = (a,b)=>
