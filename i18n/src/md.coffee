@@ -7,7 +7,7 @@
   @iuser/xxhash3-wasm > hash128
   utax/write.js
   utax/u8.js > u8eq
-  ./opencc.js
+  ./j2f.js
 
 str2id = (s)=>
   n = -1
@@ -76,6 +76,10 @@ id2str = (s,m)=>
   hash = hash128 txt
   if existsSync exist_fp
     if u8eq hash, readFileSync(exist_fp)
+      write(
+        path 'zh-TW', fp
+        j2f read path 'zh',fp
+      )
       return
 
   console.log src_fp
@@ -101,7 +105,7 @@ id2str = (s,m)=>
     if to == 'zh'
       write(
         path('zh-TW', fp)
-        opencc out
+        j2f out
       )
 
   write(

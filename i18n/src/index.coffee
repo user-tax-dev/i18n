@@ -9,6 +9,7 @@
   fs > readFileSync existsSync
   path > join
   ./lang_li.js
+  ./j2f.js
   ./transalte.js:Transalte
   ./md.js
   @iuser/xxhash3-wasm > hash128
@@ -120,6 +121,8 @@ i18n = (src, fp, exist_fp, path)=>
     await dumpJson fp, it
 
   for lang from LangLi
+    if lang == 'zh-TW'
+      continue
     #if lang == 'sk'
     #  continue
     if lang != src
@@ -144,6 +147,11 @@ i18n = (src, fp, exist_fp, path)=>
           console.log i+'\n'
           set it, todo_key[pos], i
       await out ofp, it
+
+  await out(
+    path 'zh-TW', fp
+    j2f read path('zh',fp)
+  )
 
   exist = new BinSet
   li.map ([i])=>
