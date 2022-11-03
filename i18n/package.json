@@ -9,11 +9,11 @@
     "@iuser/read": "^0.0.5",
     "@iuser/u8": "^0.0.8",
     "@iuser/walk": "^0.0.2",
-    "@iuser/wasm-set": "^0.0.1",
+    "@iuser/wasm-set": "^0.0.3",
     "@iuser/write": "^0.0.7",
     "@iuser/xxhash3-wasm": "^0.0.14",
     "await-sleep": "^0.0.1",
-    "yargs": "^17.6.0"
+    "yargs": "^17.6.1"
   },
   "files": [
     "lib/*",
@@ -26,7 +26,7 @@
     "i18n": "./lib/i18n.js"
   },
   "devDependencies": {
-    "@iuser/node-loader": "^0.0.25",
-    "coffee_plus": "^0.0.39"
+    "@iuser/node-loader": "^0.0.45",
+    "coffee_plus": "^0.0.43"
   }
 }
