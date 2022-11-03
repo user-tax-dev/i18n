@@ -14,7 +14,6 @@
   ./md.js
   @iuser/xxhash3-wasm > hash128
 
-
 concat = (a,b)=>
   len = a.length
   r = new Uint8Array(len + b.length)
@@ -83,9 +82,9 @@ it2json = (src, fp, exist_fp, path)=>
       if existsSync ifp
         txt = read ifp
         hash = hash128 txt
+        now.add hash
         if exist.has hash
           continue
-        now.add hash
         await dumpJson ifp, loads(txt)
   write(
     exist_fp
