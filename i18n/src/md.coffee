@@ -82,12 +82,13 @@ id2str = (s,m)=>
       )
       return
 
-  console.log src_fp
   transalte = Transalte src
   [md,map] = str2id txt
   for to from LangLi
+
     if to == src
       continue
+
     if to == 'zh-TW'
       continue
 
