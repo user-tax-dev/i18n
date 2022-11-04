@@ -100,7 +100,12 @@ i18n = (src, fp, exist_fp, path)=>
 
   if existsSync exist_fp
     bin = readFileSync(exist_fp)
+
     if u8eq file_hash, bin[..15]
+      write(
+        path 'zh-TW', fp
+        j2f read(path 'zh', fp)
+      )
       it2json src, fp, exist_fp, path
       return
     exist = BinSet.load bin[16..],16
