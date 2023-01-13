@@ -8,9 +8,9 @@
     "@iuser/it": "^0.0.6",
     "@iuser/wasm-set": "^0.0.8",
     "@iuser/xxhash3-wasm": "^0.0.14",
-    "opencc-js": "^1.0.4",
-    "utax": "^0.0.20",
-    "yargs": "^17.6.1"
+    "opencc-js": "^1.0.5",
+    "utax": "^0.0.32",
+    "yargs": "^17.6.2"
   },
   "files": [
     "lib/*",
@@ -23,7 +23,7 @@
     "i18n": "./lib/i18n.js"
   },
   "devDependencies": {
-    "@iuser/node-loader": "^0.0.45",
+    "@iuser/node-loader": "^0.0.46",
     "coffee_plus": "^0.0.43"
   },
   "exports": {

@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-> opencc-js:opencc
+import * as opencc from 'opencc-js'
 
 export default opencc.Converter(
   from: 'cn'
